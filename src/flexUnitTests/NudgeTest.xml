@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ 	<object id="test1" classDef="flexUnitTests.TestObject">
+ 		<property classDef="String" name="stringProperty" value="Testing Strings"/>
+ 		<property classDef="int" name="intProperty" value="12"/>
+ 		<property classDef="Number" name="floatProperty" value="3.42"/>
+ 		<property classDef="flexUnitTests.TestObject" name="nestedObject">
+ 			<property classDef="String" name="stringProperty" value="Testing Nested Objects"/>
+ 		</property>
+ 	</object>
+	 
+	<object id="test2" classDef="flexUnitTests.TestObject">
+		<property classDef="Boolean" name="booleanProperty" value="false"/>
+		<property id="testingIdTag" classDef="String" name="stringProperty" value="Testing id tag"/>
+	</object>
+
+ 	<object id="testString" classDef="String" value="test"/>
+	
+	<object id="testInt" classDef="int" value="12"/>
+
+	<object id="testAddingStuffWithASimpleInt" classDef="int" value="5"/>
+	
+	<object id="test3" classDef="flexUnitTests.TestObject">
+		<property classDef="flexUnitTests.TestObject">
+			<reference value="test1"/>
+		</property>
+	</object>
+	
+	<object id="testConstructor" classDef="flexUnitTests.TestLinkAndConstructor">
+		<constructor index="0">
+			<object classDef="flexUnitTests.TestObject">
+				<property classDef="Boolean" name="booleanProperty" value="true" />
+				<property classDef="String" name="stringProperty" value="Testing id tag"/>
+			</object>
+		</constructor>
+		<constructor index="1">
+			<object classDef="flexUnitTests.TestObject"/>
+		</constructor>
+	</object>
+	
+	<object id="testConsructorWithReferences" classDef="flexUnitTests.TestLinkAndConstructor">
+		<constructor index="0">
+			<reference value="test3"/>
+		</constructor>
+		<constructor index="1">
+			<reference value="test1"/>
+		</constructor>
+	</object>
+	
+	<object id="testObjectWithNoParameters" classDef="flexUnitTests.TestObject"/>
+	
+</root>
